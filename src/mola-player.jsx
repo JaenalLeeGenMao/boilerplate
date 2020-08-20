@@ -11,10 +11,11 @@ import {
   toSrtTime,
   toVttTime
 } from 'subtitle';
-import { parseXml2Obj } from /* webpackPreload: true */ './preroll/adsUtil';
-
-import UpcomingVideo from /* webpackPreload: true */ './upcoming-video';
-import CustomController from /* webpackPreload: true */ './custom-controller';
+import { parseXml2Obj } from './preroll/adsUtil';
+import UpcomingVideo from './upcoming-video';
+import CustomController from './custom-controller';
+// import shaka from 'shaka-player/dist/shaka-player.compiled.debug' /** development */
+import shaka from 'shaka-player/dist/shaka-player.compiled' /** production */
 
 import {
   container,
@@ -25,7 +26,7 @@ import {
   ErrorFeedback,
   Icons,
   BugLogoWrapper
-} from /* webpackPreload: true */ './mola-player.style';
+} from './mola-player.style';
 
 let idleInterval;
 
@@ -79,11 +80,12 @@ class Player extends Component {
 
   async componentDidMount() {
     // console.log('componentDidMount', this.props)
-    if (process.env.BROWSER && window) {
+    if (window) {
+
       window[`playerProps${this.props.id}`] = this.props;
 
       await this.handleInitPreroll();
-
+      // console.log(window, window.shaka)
       if (shaka) {
         await this.loadPlayer();
       } else {
