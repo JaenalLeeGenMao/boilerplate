@@ -1,8 +1,8 @@
 {
-    "name": "jw-react-npm-boilerplate",
-    "version": "1.0.0",
-    "description": "React Boilerplate Component for npm",
-    "main": "./lib/BoilerplateComponent.js",
+    "name": "mola-player",
+    "version": "0.0.0",
+    "description": "mola predefined player",
+    "main": "./lib/mola-player.js",
     "license": "MIT",
     "scripts": {
         "build": "webpack"
@@ -33,11 +33,24 @@
         "@babel/preset-env": "^7.0.0",
         "@babel/preset-react": "^7.0.0",
         "babel-loader": "^8.0.0",
+        "intersection-observer": "^0.11.0",
         "path": "^0.12.7",
         "prop-types": "^15.7.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "webpack": "^4.5.0",
         "webpack-cli": "^3.2.1"
+    },
+    "dependencies": {
+        "axios": "^0.19.2",
+        "eme-encryption-scheme-polyfill": "^2.0.1",
+        "emotion": "9.2.12",
+        "lodash": "^4.17.20",
+        "mux.js": "^5.6.4",
+        "react-emotion": "9.2.12",
+        "react-markdown": "^4.3.1",
+        "shaka-player": "2.5.13",
+        "subtitle": "^2.0.3",
+        "xml2js": "^0.4.23"
     }
 }
